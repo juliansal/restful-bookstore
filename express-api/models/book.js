@@ -1,5 +1,6 @@
 (function() {
 	var mongoose = require('mongoose');
+	var _ = require('lodash');
 	
 	var bookSchema = mongoose.Schema({
 		title: {
@@ -35,6 +36,17 @@
 	module.exports.addBook = function(book, callback) {
 		Book.create(book, callback);
 	};
+	
+	//Update a book
+	module.exports.updateBook = function(id, book, options, callback) {
+		var query = {_id: id};
+		var update = {};
 
+		_.forEach(book, function(val, key) {
+			update[key] = val;
+		});
+
+		Book.findOneAndUpdate(query, update, options, callback);
+	}; 
 
 }());

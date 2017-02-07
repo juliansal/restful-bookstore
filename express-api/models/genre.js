@@ -31,4 +31,13 @@
 		Genre.create(genre, callback);
 	};
 
+	//Update a genre
+	module.exports.updateGenre = function(id, genre, options, callback) {
+		var query = {_id: id};
+		var update = {
+			name: genre.name
+		};
+		Genre.findOneAndUpdate(query, update, options, callback);
+	};
+
 }());
