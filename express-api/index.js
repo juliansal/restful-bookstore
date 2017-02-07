@@ -5,8 +5,8 @@
 	var mongoose = require('mongoose');
 	var _ = require('lodash');
 
-	Genre = require('./models/genre');
-	Book = require('./models/book');
+	Genre = require('./controllers/genre');
+	Book = require('./controllers/book');
 
 	app.use(bodyParse.json());
 
@@ -58,6 +58,15 @@
 		});
 	});
 
+	app.delete('/api/genres/:_id', function(req, res) {
+		Genre.deleteGenre(req.params._id, function(err, genre) {
+			if(err) {
+				throw err;
+			}
+			res.json(genre);
+		})
+	});
+
 	app.get('/api/books', function(req, res) {
 		Book.getBooks(function(err, books) {
 			if(err) {
@@ -95,6 +104,15 @@
 			}
 			res.json(book);
 		});
+	});
+
+	app.delete('/api/books/:_id', function(req, res) {
+		Book.deleteBook(req.params._id, function(err, book) {
+			if(err) {
+				throw err;
+			}
+			res.json(book);
+		})
 	});
 
 
