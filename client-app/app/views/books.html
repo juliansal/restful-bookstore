@@ -1,0 +1,9 @@
+<div ng-init="getBooks()">
+	<h2>All My Books</h2>
+	<div ng-repeat="book in books">
+		<p>{{book.title}}</p>
+		<p>{{book.description}}</p>
+		<img ng-src="{{book.image_url}}" alt="bookcover">
+		<hr>
+	</div>
+</div>

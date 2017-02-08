@@ -1,27 +1,32 @@
 <!doctype html>
-<html ng-app="App">
+<html>
 <head>
-    <title>Book Collection</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-  	<!-- Bootstrap -->
-  	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="app.css" rel="stylesheet" type="text/css">
+	<title>Book Collection</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/bootstrap-material.css" />  
+    <link href="css/app.css" rel="stylesheet" type="text/css">
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="js/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
+	<script src="controllers/booksCtrl.js"></script>
+	<script src="controllers/genresCtrl.js"></script>
 
 </head>
-<body>
-    <div id="nav">
-        <ul class="nav-menu">
-            <li><a href="#/">Home</a></li>
-        </ul>
+<body ng-app="App">
+    <div class="navbar navbar-default">
+		<div class="container-fluid">
+    		<div class="navbar-collapse collapse navbar-responsive-collapse">
+      			<ul class="nav navbar-nav">
+            		<li><a ui-sref="home">Home</a></li>
+        		</ul>
+    		</div>
+		</div>
     </div>
 
     <div class="container">
         <h1>Book Collection</h1>
-        <ng-view></ng-view>
+        <ui-view></ui-view>
     </div>
 </body>
 </html>

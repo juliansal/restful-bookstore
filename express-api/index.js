@@ -8,6 +8,15 @@
 	Genre = require('./controllers/genre');
 	Book = require('./controllers/book');
 
+	var allowCors = function(req, res, next) {
+		res.header('Access-Control-Allow-Origin', 'http://localhost:1337');
+    	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    	res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    	next();
+	};
+
+	app.use(allowCors);
 	app.use(bodyParse.json());
 
 	//Connect to mongoose
@@ -67,6 +76,7 @@
 		})
 	});
 
+	//Books
 	app.get('/api/books', function(req, res) {
 		Book.getBooks(function(err, books) {
 			if(err) {
