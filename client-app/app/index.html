@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+    <title>Book Collection</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  	<!-- Bootstrap -->
+  	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="app.css" rel="stylesheet" type="text/css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+    <div id="nav">
+        <ul class="nav-menu">
+            <li><a href="#/">Home</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Book Collection</h1>
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>
