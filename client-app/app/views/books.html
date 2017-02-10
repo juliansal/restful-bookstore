@@ -1,9 +1,18 @@
-<div ng-init="getBooks()">
-	<h2>All My Books</h2>
-	<div ng-repeat="book in books">
-		<p>{{book.title}}</p>
-		<p>{{book.description}}</p>
-		<img ng-src="{{book.image_url}}" alt="bookcover">
+<div class="panel panel-default" ng-init="vm.getBooks()">
+	<div class="panel-heading">
+		<h2 class="panel-title">All My Books</h2>
+	</div>
+	<div class="panel-body" ng-repeat="book in vm.books">
+		<div class="row">
+			<div class="col-md-8">
+				<h3>{{book.title}}</h3>
+				<p>{{book.description}}</p>
+				<a class="btn btn-primary" ui-sref="book-details({id: book._id})" type="submit">Details</a>
+			</div>
+			<div class="col-md-4">
+				<img width="200" ng-if="book.image_url" ng-src="{{book.image_url}}" alt="bookcover">
+			</div>
+		</div>
 		<hr>
 	</div>
 </div>

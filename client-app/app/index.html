@@ -14,19 +14,25 @@
 
 </head>
 <body ng-app="App">
-    <div class="navbar navbar-default">
-		<div class="container-fluid">
+    <nav class="navbar navbar-default">
+		<div class="container">
     		<div class="navbar-collapse collapse navbar-responsive-collapse">
       			<ul class="nav navbar-nav">
             		<li><a ui-sref="home">Home</a></li>
+					<li><a ui-sref="add-book">Add Book</a></li>
+					<li><a ui-sref="home">Genres</a></li>
         		</ul>
     		</div>
 		</div>
-    </div>
+    </nav>
 
     <div class="container">
         <h1>Book Collection</h1>
-        <ui-view></ui-view>
+		<div class="row">
+			<div class="col-md-12">
+        		<ui-view></ui-view>
+			</div>
+		</div>
     </div>
 </body>
 </html>

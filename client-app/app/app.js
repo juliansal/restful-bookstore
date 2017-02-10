@@ -5,15 +5,16 @@
 				.state('home', {
 					url: '/',
 					templateUrl: '/views/books.html',
-					controller: "BooksCtrl as vm"
+					controller: 'BooksCtrl as vm'
 				})
 				.state('edit', {
 					url: '/edit-book',
 					templateUrl: '/views/editBook.html'
 				})
 				.state('book-details', {
-					url: '/book-details',
-					templateUrl: '/views/bookDetails.html'
+					url: '/book-details/:id',
+					templateUrl: '/views/bookDetails.html',
+					controller: 'BooksCtrl as vm'
 				})
 				.state('add-book', {
 					url: '/add-book',
