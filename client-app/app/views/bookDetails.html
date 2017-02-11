@@ -1,11 +1,17 @@
-<div ng-init="vm.bookDetails()">
+<div class="panel panel-default" ng-init="vm.bookDetails()">
 	<div class="panel-heading">
 		<h2 class="panel-title">{{vm.book.title}}</h2>
 	</div>
 	<div class="panel-body">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-6">
 				<p>{{vm.book.description}}</p>
+				<p>Author: <small>{{vm.book.author}}</small></p>
+				<p>Genre: <small>{{vm.book.genre}}</small></p>
+				<p>Pages: <small>{{vm.book.pages}}</small></p>
+			</div>
+			<div class="col-md-6">
+				<img width="98%" ng-if="vm.book.image_url" ng-src="{{vm.book.image_url}}" alt="bookcover">
 			</div>
 		</div>
 		<hr>

@@ -18,7 +18,8 @@
 				})
 				.state('add-book', {
 					url: '/add-book',
-					templateUrl: '/views/addBook.html'
+					templateUrl: '/views/addBook.html',
+					controller: 'BooksCtrl as vm'
 				});
 				$urlRouterProvider.otherwise('/');
 		});
