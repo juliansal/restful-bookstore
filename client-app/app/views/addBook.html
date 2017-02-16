@@ -1,33 +1,38 @@
 <h2>Add Book</h2>
-<form ng-submit="vm.testSub()">
+<form ng-submit="vm.addBooks()">
 	<div class="form-group row">
-		<label for="bookTitle" class="col-sm-2 col-form-label">Title</label>
+		<label class="col-sm-2 col-form-label">Title</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" placeholder="Book Title" id="bookTitle">
+			<input class="form-control" type="text" placeholder="Book Title" ng-model="vm.book.title">
 		</div>
 	</div>
 	<div class="form-group row">
-		<label for="bookTitle" class="col-sm-2 col-form-label">Description</label>
+		<label class="col-sm-2 col-form-label">Description</label>
 		<div class="col-sm-10">
-			<textarea class="form-control" type="text" placeholder="Add book description" id="bookTitle" rows="3"></textarea>
+			<textarea class="form-control" type="text" placeholder="Add book description" rows="3" ng-model="vm.book.description"></textarea>
 		</div>
 	</div>
 	<div class="form-group row">
-		<label for="bookTitle" class="col-sm-2 col-form-label">Author</label>
+		<label class="col-sm-2 col-form-label">Author</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" placeholder="Author" id="bookTitle">
+			<input class="form-control" type="text" placeholder="Author" ng-model="vm.book.author">
 		</div>
 	</div>
 	<div class="form-group row">
-		<label for="bookTitle" class="col-sm-2 col-form-label">Genre</label>
+		<label class="col-sm-2 col-form-label">Genre</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" placeholder="Genre" id="bookTitle">
+			<select class="form-control" ng-model="vm.book.genre">
+				<option value="">-- Please Select a Genre --</option>
+				<option value="Fantasy">Fantasy</option>
+				<option value="Sci-Fi">Sci-Fi</option>
+				<option value="Manga">Manga</option>
+			</select>
 		</div>
 	</div>
 	<div class="form-group row">
-		<label for="bookTitle" class="col-sm-2 col-form-label">Book Cover Image</label>
+		<label class="col-sm-2 col-form-label">Book Cover Image</label>
 		<div class="col-sm-10">
-			<input class="form-control" type="text" placeholder="Paste the URL to book cover image" id="bookTitle">
+			<input class="form-control" type="text" placeholder="Paste the URL to book cover image" ng-model="vm.book.url">
 		</div>
 	</div>
 	<div class="form-group row">
