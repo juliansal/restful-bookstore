@@ -8,8 +8,9 @@
 					controller: 'BooksCtrl as vm'
 				})
 				.state('edit', {
-					url: '/edit-book',
-					templateUrl: '/views/editBook.html'
+					url: '/edit-book/:id',
+					templateUrl: '/views/editBook.html',
+					controller: 'BooksCtrl as vm'
 				})
 				.state('book-details', {
 					url: '/book-details/:id',

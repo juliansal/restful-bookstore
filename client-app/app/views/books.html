@@ -8,6 +8,8 @@
 				<h3>{{book.title}}</h3>
 				<p>{{book.description}}</p>
 				<a class="btn btn-primary" ui-sref="book-details({id: book._id})" type="submit">Details</a>
+				<a class="btn btn-warning" ui-sref="edit({id: book._id})" type="submit">Update</a>
+				<a class="btn btn-danger" ng-click="vm.deleteBook({id: book._id})" type="submit">Delete</a>
 			</div>
 			<div class="col-md-4">
 				<img width="200" ng-if="book.image_url" ng-src="{{book.image_url}}" alt="bookcover">
