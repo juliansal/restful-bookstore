@@ -119,7 +119,7 @@
 	app.delete('/api/books/:_id', function(req, res) {
 		Book.deleteBook(req.params._id, function(err, book) {
 			if(err) {
-				throw err;
+				console.log(err.message);
 			}
 			res.json(book);
 		})

@@ -18,7 +18,6 @@
 
 			vm.bookDetails = function() {
 				var id = $stateParams.id;
-				console.log($stateParams.id);
 				$http.get('http://localhost:3000/api/books/' + id)
 					.then(
 						function(success) {
@@ -34,7 +33,7 @@
 				$http.post('http://localhost:3000/api/books', vm.book)
 					.then(
 						function(success) {
-							console.log(success.data);
+							//console.log(success.data);
 						},
 						function(err) {
 							console.log(err);
@@ -43,12 +42,10 @@
 			};
 
 			vm.deleteBook = function(data) {
-				console.log(data.id);
 				$http.delete('http://localhost:3000/api/books/' + data.id)
 					.then(
 						function(success) {
 							vm.getBooks();
-							// vm.book = success.data;
 						}, 
 						function(err) {
 							console.log(err);
@@ -57,18 +54,18 @@
 			};
 
 			vm.editBook = function() {
-				console.log(vm.book);
-				// $http.put('http://localhost:3000/api/books/' + data.id)
-				// 	.then(
-				// 		function(success) {
-				// 			vm.getBooks();
-				// 			// vm.book = success.data;
-				// 		}, 
-				// 		function(err) {
-				// 			console.log(err);
-				// 		}
-				// );
+				$http.put('http://localhost:3000/api/books/' + vm.book._id, vm.book)
+					.then(
+						function(success) {
+							vm.getBooks();
+							alert("Book updated");
+						}, 
+						function(err) {
+							console.log(err);
+						}
+				);
 			};
+			
 
 
 		}]);
